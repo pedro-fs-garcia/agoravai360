@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Maria Silva",
+    "position": "Proprietária",
+    "company": "Boutique Elegance",
+    "avatar": "/placeholder.svg?height=100&width=100",
+    "content":
+      "A Agora Vai 360 transformou completamente a presença online da minha loja. Em apenas 3 meses, aumentamos nossas vendas em 40% graças às estratégias de marketing digital implementadas pela equipe.",
+    "metric": "+40%",
+    "metricLabel": "Vendas",
+    "rating": 5,
+    "category": "E-commerce"
+  },
+  {
+    "id": 2,
+    "name": "João Oliveira",
+    "position": "Diretor",
+    "company": "Clínica Saúde Total",
+    "avatar": "/placeholder.svg?height=100&width=100",
+    "content":
+      "Nosso site antigo não gerava leads qualificados. Após a reformulação feita pela Agora Vai 360, passamos a receber diariamente novos pacientes que encontram nossa clínica através do Google. Resultado excepcional!",
+    "metric": "+200%",
+    "metricLabel": "Leads",
+    "rating": 5,
+    "category": "Saúde"
+  },
+  {
+    "id": 3,
+    "name": "Ana Pereira",
+    "position": "CEO",
+    "company": "Startup Inovação",
+    "avatar": "/placeholder.svg?height=100&width=100",
+    "content":
+      "A equipe da Agora Vai 360 entendeu perfeitamente o que nossa startup precisava. Desenvolveram uma estratégia completa de marketing digital que nos ajudou a conquistar nossos primeiros 1000 clientes.",
+    "metric": "1000+",
+    "metricLabel": "Clientes",
+    "rating": 5,
+    "category": "Tecnologia"
+  },
+  {
+    "id": 4,
+    "name": "Carlos Santos",
+    "position": "Advogado",
+    "company": "Santos & Associados",
+    "avatar": "/placeholder.svg?height=100&width=100",
+    "content":
+      "Como advogado, precisava de uma presença online profissional e que transmitisse confiança. A Agora Vai 360 não só criou um site excelente, como também implementou estratégias de SEO que me posicionaram entre os primeiros resultados de busca na região.",
+    "metric": "Top 3",
+    "metricLabel": "Google",
+    "rating": 5,
+    "category": "Jurídico"
+  },
+  {
+    "id": 5,
+    "name": "Fernanda Lima",
+    "position": "Gerente",
+    "company": "Restaurante Sabor Especial",
+    "avatar": "/placeholder.svg?height=100&width=100",
+    "content":
+      "A gestão de redes sociais realizada pela Agora Vai 360 aumentou significativamente nossa visibilidade. Nosso Instagram cresceu 200% em 6 meses e as reservas online dispararam. Recomendo fortemente!",
+    "metric": "+200%",
+    "metricLabel": "Instagram",
+    "rating": 5,
+    "category": "Gastronomia"
+  }
+]

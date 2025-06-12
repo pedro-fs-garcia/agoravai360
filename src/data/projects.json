@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Site Institucional - Empresa XYZ",
+    "category": "sites",
+    "image": "/placeholder.svg?height=400&width=600",
+    "description": "Desenvolvimento de site institucional com foco em conversão e experiência do usuário.",
+    "metrics": { "value": "+150%", "label": "Conversões" },
+    "tags": ["Responsive", "SEO", "UX/UI"]
+  },
+  {
+    "id": 2,
+    "title": "Campanha de Marketing - Loja ABC",
+    "category": "marketing",
+    "image": "/placeholder.svg?height=400&width=600",
+    "description": "Estratégia de marketing digital que aumentou as vendas em 45% em 3 meses.",
+    "metrics": { "value": "+45%", "label": "Vendas" },
+    "tags": ["Google Ads", "Facebook Ads", "Analytics"]
+  },
+  {
+    "id": 3,
+    "title": "Otimização SEO - Clínica Saúde",
+    "category": "seo",
+    "image": "/placeholder.svg?height=400&width=600",
+    "description": "Estratégia de SEO que aumentou o tráfego orgânico em 200% em 6 meses.",
+    "metrics": { "value": "+200%", "label": "Tráfego" },
+    "tags": ["SEO On-page", "Link Building", "Content"]
+  },
+  {
+    "id": 4,
+    "title": "E-commerce - Moda Fashion",
+    "category": "sites",
+    "image": "/placeholder.svg?height=400&width=600",
+    "description": "Desenvolvimento de e-commerce com integração de pagamento e gestão de estoque.",
+    "metrics": { "value": "+300%", "label": "ROI" },
+    "tags": ["E-commerce", "Payment", "Inventory"]
+  },
+  {
+    "id": 5,
+    "title": "Gestão de Redes Sociais - Restaurante Gourmet",
+    "category": "marketing",
+    "image": "/placeholder.svg?height=400&width=600",
+    "description": "Estratégia de conteúdo para redes sociais que aumentou o engajamento em 80%.",
+    "metrics": { "value": "+80%", "label": "Engajamento" },
+    "tags": ["Social Media", "Content", "Branding"]
+  },
+  {
+    "id": 6,
+    "title": "Landing Page - Curso Online",
+    "category": "sites",
+    "image": "/placeholder.svg?height=400&width=600",
+    "description": "Landing page de alta conversão para captação de leads para curso online.",
+    "metrics": { "value": "+250%", "label": "Leads" },
+    "tags": ["Landing Page", "CRO", "A/B Testing"]
+  }
+]

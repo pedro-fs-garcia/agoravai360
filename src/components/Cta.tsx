@@ -1,45 +1,18 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Star, CheckCircle, Award } from "lucide-react"
+import { Star } from "lucide-react"
 import CtaButton from "./ctaButton"
+import { differentials } from "../data/differentials"
+import { Tooltip } from "react-tooltip"
 
 export default function Cta() {
-  const benefits = [
-    {
-      icon: <CheckCircle className="h-6 w-6" />,
-      title: "Atendimento Personalizado",
-      description: "Entendemos as necessidades específicas do seu negócio e criamos soluções sob medida.",
-    },
-    {
-      icon: <Award className="h-6 w-6" />,
-      title: "Resultados Comprovados",
-      description: "Estratégias que geram leads qualificados e aumentam suas vendas de forma consistente.",
-    },
-    {
-      icon: <Star className="h-6 w-6" />,
-      title: "Foco Regional",
-      description: "Especialistas no mercado de São José dos Campos e Vale do Paraíba com conhecimento local.",
-    },
-  ]
-
   return (
     <section
       id="contato"
       className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white relative overflow-hidden"
     >
-      {/* Background decorativo */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.15) 0%, transparent 50%), 
-                           radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)`,
-          }}
-        />
-      </div>
 
-      {/* Formas animadas de fundo */}
       <motion.div
         className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-r from-yellow-400/10 to-blue-400/10 rounded-full filter blur-3xl"
         animate={{
@@ -65,18 +38,6 @@ export default function Cta() {
           ease: "easeInOut",
         }}
       />
-
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
-            backgroundSize: "50px 50px",
-          }}
-        />
-      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -157,61 +118,35 @@ export default function Cta() {
               Por que escolher a <span className="text-yellow-400">Agora Vai 360</span>?
             </motion.h3>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {differentials.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="text-center group"
+                  className="relative group text-center p-4 rounded-lg hover:bg-slate-900/40 transition-colors duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 + index * 0.1 }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-500/20 to-blue-500/20 rounded-full border border-yellow-400/30 mb-4 group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
+                  {/* Ícone */}
+                  <div className="flex items-center justify-center w-12 h-12 mx-auto mb-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full group-hover:scale-105 transition-transform duration-300">
                     <div className="text-yellow-400">{benefit.icon}</div>
-                  </motion.div>
-                  <h4 className="font-semibold text-lg mb-3 text-white group-hover:text-yellow-400 transition-colors duration-300">
+                  </div>
+
+                  {/* Título */}
+                  <h4 className="font-medium text-white text-sm sm:text-base group-hover:text-yellow-400 transition-colors duration-300">
                     {benefit.title}
                   </h4>
-                  <p className="text-slate-300 leading-relaxed">{benefit.description}</p>
+
+                  {/* Descrição oculta inicialmente, exibida no hover */}
+                  <p className="absolute left-0 right-0 bottom-[-60px] bg-slate-800 text-slate-300 text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 mx-4 shadow-lg pointer-events-none">
+                    {benefit.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
-
-            {/* Estatísticas rápidas */}
-            <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-slate-600/30"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              viewport={{ once: true }}
-            >
-              {[
-                { value: "200+", label: "Clientes Satisfeitos" },
-                { value: "300%", label: "Aumento Médio ROI" },
-                { value: "24/7", label: "Suporte Disponível" },
-                { value: "5 Anos", label: "de Experiência" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.1 + index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">{stat.value}</div>
-                  <div className="text-sm text-slate-400">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
           </motion.div>
 
-          {/* CTA final */}
           <motion.div
             className="mt-12 text-center"
             initial={{ opacity: 0, y: 20 }}
@@ -230,19 +165,6 @@ export default function Cta() {
         </motion.div>
       </div>
 
-      {/* Efeito de brilho */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/3 to-transparent"
-        animate={{
-          x: [-100, window.innerWidth + 100],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-          repeatDelay: 3,
-        }}
-      />
     </section>
   )
 }

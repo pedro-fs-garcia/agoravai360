@@ -1,67 +1,62 @@
 [
   {
     "id": 1,
-    "name": "Maria Silva",
-    "position": "Proprietária",
-    "company": "Boutique Elegance",
+    "name": "Sabor da Vózira",
+    "company": "Sabor da Vózira",
     "avatar": "/placeholder.svg?height=100&width=100",
     "content":
-      "A Agora Vai 360 transformou completamente a presença online da minha loja. Em apenas 3 meses, aumentamos nossas vendas em 40% graças às estratégias de marketing digital implementadas pela equipe.",
-    "metric": "+40%",
-    "metricLabel": "Vendas",
+      "Estamos extremamente satisfeitos com o trabalho da Agora vai 360! Desde o primeiro contato, fomos atendidos com muita atenção, profissionalismo e agilidade. A equipe entendeu exatamente o que precisávamos para valorizar nossos produtos e traduziu isso em um catálogo moderno, bem estruturado e visualmente atrativo.",
     "rating": 5,
     "category": "E-commerce"
   },
   {
     "id": 2,
-    "name": "João Oliveira",
-    "position": "Diretor",
-    "company": "Clínica Saúde Total",
+    "name": "Alphamore Imóveis",
+    "company": "Alphamore Imóveis",
     "avatar": "/placeholder.svg?height=100&width=100",
     "content":
-      "Nosso site antigo não gerava leads qualificados. Após a reformulação feita pela Agora Vai 360, passamos a receber diariamente novos pacientes que encontram nossa clínica através do Google. Resultado excepcional!",
-    "metric": "+200%",
-    "metricLabel": "Leads",
+      "Serviços de qualidade e ótimo custo benefício. Serviços entregues sempre no prazo e boa qualidade.",
     "rating": 5,
-    "category": "Saúde"
+    "category": "Imobiliária"
   },
   {
     "id": 3,
-    "name": "Ana Pereira",
-    "position": "CEO",
-    "company": "Startup Inovação",
+    "name": "Utilidade SJC",
+    "company": "",
     "avatar": "/placeholder.svg?height=100&width=100",
     "content":
-      "A equipe da Agora Vai 360 entendeu perfeitamente o que nossa startup precisava. Desenvolveram uma estratégia completa de marketing digital que nos ajudou a conquistar nossos primeiros 1000 clientes.",
-    "metric": "1000+",
-    "metricLabel": "Clientes",
+      "Um ótimo trabalho, cumpriram com o prazo, e o preço foi o melhor da região. Aprovamos e indicamos o sserviços deles.",
     "rating": 5,
-    "category": "Tecnologia"
+    "category": "Loja"
   },
   {
     "id": 4,
-    "name": "Carlos Santos",
-    "position": "Advogado",
-    "company": "Santos & Associados",
+    "name": "Premium Movelaria",
+    "company": "",
     "avatar": "/placeholder.svg?height=100&width=100",
     "content":
-      "Como advogado, precisava de uma presença online profissional e que transmitisse confiança. A Agora Vai 360 não só criou um site excelente, como também implementou estratégias de SEO que me posicionaram entre os primeiros resultados de busca na região.",
-    "metric": "Top 3",
-    "metricLabel": "Google",
+      "Recomendamos. Realiazaram noso serviço no prazo, com qualidade e atendimanto excelentes.",
     "rating": 5,
-    "category": "Jurídico"
+    "category": "Movelaria"
   },
   {
     "id": 5,
-    "name": "Fernanda Lima",
-    "position": "Gerente",
-    "company": "Restaurante Sabor Especial",
+    "name": "Ótica Lunica",
+    "company": "",
     "avatar": "/placeholder.svg?height=100&width=100",
     "content":
-      "A gestão de redes sociais realizada pela Agora Vai 360 aumentou significativamente nossa visibilidade. Nosso Instagram cresceu 200% em 6 meses e as reservas online dispararam. Recomendo fortemente!",
-    "metric": "+200%",
-    "metricLabel": "Instagram",
+      "A ótica Lunica é uma empresa moderna e sabe da importância do mundo digital para ser vista e encontrada, por isso, decidimos fazer o TOUR VIRTUAL e escolhemos a @agoravai360 para nos auxiliar com esse serviço, e adoramos o resultado",
     "rating": 5,
-    "category": "Gastronomia"
+    "category": "Ótica"
+  },
+    {
+    "id": 6,
+    "name": "Mafort Investimentos",
+    "company": "",
+    "avatar": "/placeholder.svg?height=100&width=100",
+    "content":
+      "Gostei muito do atendimento, o Marcelo super atencioso e paciente, nos entregou um conteúdo totalmente personalizado e bem editado. Recomendo com certeza!",
+    "rating": 5,
+    "category": "Empresa"
   }
 ]

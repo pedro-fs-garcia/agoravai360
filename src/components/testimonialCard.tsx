@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Quote, Star } from "lucide-react";
 
 type Props = {

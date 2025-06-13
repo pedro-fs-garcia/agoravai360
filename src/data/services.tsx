@@ -1,8 +1,6 @@
 import {
   Globe,
   PenTool,
-  Award,
-  CheckCircle,
   GalleryHorizontalEnd,
   ShoppingCart,
   Building,

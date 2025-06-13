@@ -10,7 +10,6 @@ import {
   ShoppingCart,
   Globe,
   BookOpen,
-  MousePointerClick,
   Home,
 } from "lucide-react"
 

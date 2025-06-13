@@ -3,8 +3,6 @@ import {
   CheckCircle,
   MapPin,
   Search,
-  Target,
-  Rocket,
   BarChart2,
   Sliders,
   Star,

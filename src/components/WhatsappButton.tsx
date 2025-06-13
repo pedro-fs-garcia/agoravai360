@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { MessageCircle } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import contactInfo from "../data/contactInfo.json"
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -58,7 +59,7 @@ export default function WhatsAppButton() {
             className="relative"
           >
             <a
-              href="https://wa.me/5512000000000?text=Olá! Gostaria de saber mais sobre os serviços da Agora Vai 360."
+              href={`https://web.whatsapp.com/send?phone=${contactInfo.whatsapp}&text=Olá! Gostaria de saber mais sobre os serviços da Agora Vai 360.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-16 h-16 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors"

@@ -10,7 +10,7 @@ import TestimonialCard from "./testimonialCard"
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [visibleTestimonials, setVisibleTestimonials] = useState([])
+  const [visibleTestimonials, setVisibleTestimonials] = useState<any>([])
   const [itemsPerView, setItemsPerView] = useState(3)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
@@ -156,7 +156,7 @@ export default function Testimonials() {
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
-                {visibleTestimonials.map((testimonial, index) => (
+                {visibleTestimonials.map((testimonial:any, index:number) => (
                   <TestimonialCard testimonial={testimonial} index={index}  />
                 ))}
 

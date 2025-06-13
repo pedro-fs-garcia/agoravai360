@@ -4,10 +4,8 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Award,
-  CheckCircle,
 } from "lucide-react"
 import CtaButton from "./ctaButton"
-import {differentials} from "../data/differentials"
 import {services} from "../data/services"
 
 export default function Services() {

@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { Star } from "lucide-react"
 import CtaButton from "./ctaButton"
 import { differentials } from "../data/differentials"
-import { Tooltip } from "react-tooltip"
 
 export default function Cta() {
   return (

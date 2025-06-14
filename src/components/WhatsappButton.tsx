@@ -59,7 +59,7 @@ export default function WhatsAppButton() {
             className="relative"
           >
             <a
-              href={`https://web.whatsapp.com/send?phone=${contactInfo.whatsapp}&text=Olá! Gostaria de saber mais sobre os serviços da Agora Vai 360.`}
+              href={`https://wa.me/${contactInfo.whatsapp}?text=Olá! Vi o seu site e gostaria de saber mais sobre os serviços da Agora Vai 360.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-16 h-16 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors"

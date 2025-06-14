@@ -82,7 +82,7 @@ export default function Hero() {
               transition={{ delay: 0.2 }}
             >
               <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-              Transformando negócios digitalmente
+              Trazendo a sua realidade para o virtual
             </motion.div>
 
             {/* Main title */}

@@ -1,92 +1,50 @@
 [
   {
     "id": 1,
-    "title": "Loja Colletivo Shop",
+    "title": "Colletivo Shop",
     "category": "loja virtual",
-    "image": "/placeholder.svg?height=400&width=600",
+    "image": "/portfolio/colletivoshop.png",
     "description": "Desenvolvimento de loja virtual com foco em conversão e experiência do usuário.",
-    "tags": [
-      "Responsive",
-      "SEO",
-      "UX/UI"
-    ]
+    "tags": ["Responsive", "SEO", "UX/UI"]
   },
   {
     "id": 2,
     "title": "Imobiliária Alphamore",
     "category": "vitrine virtual",
-    "image": "/placeholder.svg?height=400&width=600",
-    "description": "Exibição de imóveis",
-    "tags": []
+    "image": "/portfolio/alphamore.jpg",
+    "description": "Site para apresentação de imóveis com foco em usabilidade e SEO local.",
+    "tags": ["Vitrine", "Imobiliária", "Responsivo"]
   },
   {
     "id": 3,
     "title": "Movelaria Premium",
     "category": "vitrine virtual",
-    "image": "/placeholder.svg?height=400&width=600",
-    "description": "",
-    "metrics": {
-      "value": "+200%",
-      "label": "Tráfego"
-    },
-    "tags": [
-      "SEO On-page",
-      "Link Building",
-      "Content"
-    ]
+    "image": "/portfolio/premiummovelaria.png",
+    "description": "Site institucional com foco em exposição de produtos de alto padrão e ranqueamento no Google.",
+    "tags": ["SEO", "Link Building", "Content"]
   },
   {
     "id": 4,
     "title": "Ótica Lunica",
     "category": "loja virtual",
-    "image": "/placeholder.svg?height=400&width=600",
-    "description": "",
-    "tags": [
-      "E-commerce",
-      "Payment",
-      "Inventory"
-    ]
+    "image": "/portfolio/oticalunica.png",
+    "description": "Loja virtual com gerenciamento de estoque, integração com meios de pagamento e design responsivo.",
+    "tags": ["E-commerce", "Payment", "Inventário", "Loja"]
   },
   {
     "id": 5,
-    "title": "Loja Utilidades SJC",
+    "title": "Enzera Estética Automotiva",
     "category": "loja virtual",
-    "image": "/placeholder.svg?height=400&width=600",
-    "description": "",
-    "tags": [
-      ""
-    ]
+    "image": "/portfolio/Enzera-Estetica-Automotiva.jpg",
+    "description": "Landing Page com foco em conversão, responsividade e visibilidade local no Google.",
+    "tags": ["Landing Page", "SEO", "Responsivo"]
   },
   {
     "id": 6,
     "title": "Landing Page Drones",
     "category": "landing page",
-    "image": "/placeholder.svg?height=400&width=600",
-    "description": "Landing page de alta conversão para... ",
-    "tags": [
-      "Landing Page",
-      "SEO"
-    ]
-  },
-  {
-    "id": 7,
-    "title": "Nutrição Isabela Bernardi",
-    "category": "institucional",
-    "image": "/placeholder.svg?height=400&width=600",
-    "description": "",
-    "tags": [
-      "SEO"
-    ]
-  },
-  {
-    "id": 8,
-    "title": "Landing Page Astronauta",
-    "category": "landing page",
-    "image": "/placeholder.svg?height=400&width=600",
-    "description": "Landing page de alta conversão para... ",
-    "tags": [
-      "Landing Page",
-      "SEO"
-    ]
+    "image": "/portfolio/Landinpage-drones.png",
+    "description": "Landing page moderna e responsiva com foco em captação de leads.",
+    "tags": ["Landing Page", "SEO", "Responsivo"]
   }
 ]

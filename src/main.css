@@ -1,0 +1,19 @@
+@keyframes scrollImage {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+        /* ajuste conforme a altura da imagem */
+    }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.animate-scroll-image {
+    animation: scrollImage 15s linear infinite;
+}

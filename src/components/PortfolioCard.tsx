@@ -5,7 +5,7 @@ type Props = {
     index: number
 }
 
-export default function PortfolioCard({project, index}: Props) {
+export default function PortfolioCard({ project, index }: Props) {
     return (
         <motion.div
             key={project.id}
@@ -21,9 +21,8 @@ export default function PortfolioCard({project, index}: Props) {
                     <img
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="absolute w-full h-auto animate-scroll-image"
                     />
-
                     {/* Overlay com gradiente */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -31,16 +30,18 @@ export default function PortfolioCard({project, index}: Props) {
                 {/* Conteúdo do card */}
                 <div className="p-6 space-y-4">
                     <div className="flex items-start justify-between">
-                        <h3 className="text-xl font-semibold text-white group-hover:text-yellow-400 transition-colors duration-300">
-                            {project.title}
-                        </h3>
+                        <a href={project.image} target="_blank"  > 
+                            <h3 className="text-xl font-semibold text-white group-hover:text-yellow-400 transition-colors duration-300">
+                                {project.title}
+                            </h3>
+                        </a>
                     </div>
 
                     <p className="text-slate-300 text-sm leading-relaxed">{project.description}</p>
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag:string, tagIndex:number) => (
+                        {project.tags.map((tag: string, tagIndex: number) => (
                             <span
                                 key={tagIndex}
                                 className="px-3 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-full border border-slate-600/30"

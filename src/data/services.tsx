@@ -25,7 +25,7 @@ export const services = [
 
   {
     icon: <MousePointerClick className="h-8 w-8" />,
-    title: "LandingPages",
+    title: "Landing Pages",
     description: "Páginas focadas em conversão, criadas para campanhas específicas e com alta taxa de captura de leads.",
     features: ["Velocidade", "Copy persuasiva", "Call to Action eficaz"],
   },
@@ -48,34 +48,34 @@ export const services = [
     features: ["Galeria de Produtos", "Links Diretos", "Visual Moderno"],
 
   },
-  {
-    icon: <GalleryHorizontalEnd className="h-8 w-8" />,
-    title: "carregamento Rápido",
-    description: "",
-    features: [],
-  },
-  {
-    icon: <GalleryHorizontalEnd className="h-8 w-8" />,
-    title: "Responsividade",
-    description: "",
-    features: [],
-  },
-  {
-    icon: <GalleryHorizontalEnd className="h-8 w-8" />,
-    title: "Análise de dados",
-    description: "",
-    features: [],
-  },
-  {
-    icon: <GalleryHorizontalEnd className="h-8 w-8" />,
-    title: "Botão Whatsapp",
-    description: "",
-    features: [],
-  },
-  {
-    icon: <GalleryHorizontalEnd className="h-8 w-8" />,
-    title: "Segurança e SSL",
-    description: "",
-    features: [],
-  },
+  // {
+  //   icon: <GalleryHorizontalEnd className="h-8 w-8" />,
+  //   title: "carregamento Rápido",
+  //   description: "",
+  //   features: [],
+  // },
+  // {
+  //   icon: <GalleryHorizontalEnd className="h-8 w-8" />,
+  //   title: "Responsividade",
+  //   description: "",
+  //   features: [],
+  // },
+  // {
+  //   icon: <GalleryHorizontalEnd className="h-8 w-8" />,
+  //   title: "Análise de dados",
+  //   description: "",
+  //   features: [],
+  // },
+  // {
+  //   icon: <GalleryHorizontalEnd className="h-8 w-8" />,
+  //   title: "Botão Whatsapp",
+  //   description: "",
+  //   features: [],
+  // },
+  // {
+  //   icon: <GalleryHorizontalEnd className="h-8 w-8" />,
+  //   title: "Segurança e SSL",
+  //   description: "",
+  //   features: [],
+  // },
 ]

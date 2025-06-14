@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import CtaButton from "./ctaButton";
+import { CalendarClock } from "lucide-react";
 
 type Props = {
     plan: any,
@@ -80,7 +81,6 @@ export default function PriceCard({ plan, index }: Props) {
                 </CardHeader>
 
                 <CardContent className="flex-grow px-6">
-                    {/* Preço */}
                     <div className="text-center mb-8">
                         <div className="flex items-baseline justify-center">
                             <span className={`text-4xl font-bold ${plan.popular ? "text-yellow-600" : "text-slate-800"}`}>
@@ -100,10 +100,22 @@ export default function PriceCard({ plan, index }: Props) {
                                 transition={{ delay: 0.1 * i }}
                                 viewport={{ once: true }}
                             >
-                            <div className={` flex-shrink-0 ${plan.popular ?  "text-yellow-500" : "text-blue-800"} `}>{f.icon}</div>
+                                <div className={` flex-shrink-0 ${plan.popular ? "text-yellow-500" : "text-blue-800"} `}>{f.icon}</div>
                                 <span className="text-slate-600 leading-relaxed">{f.feature}</span>
                             </motion.li>
                         ))}
+                        {plan.deadline && (
+                            <motion.li
+                                className="flex items-center gap-3"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.1 }}
+                                viewport={{ once: true }}
+                            >
+                                <div className={`flex-shrink-0 ${plan.popular ? "text-yellow-500" : "text-blue-800"}`}><CalendarClock className="h-5 w-5" /></div>
+                                <span className="text-slate-600 leading-relaxed">{plan.deadline}</span>
+                            </motion.li>
+                        )}
                     </ul>
                 </CardContent>
 

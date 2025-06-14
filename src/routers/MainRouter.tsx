@@ -3,8 +3,8 @@ import HomePage from "../pages/HomePage";
 
 export default function MainRouter() {
     return (
-            <Routes>
-                <Route path="/" element={<HomePage/>} />
-            </Routes>
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+        </Routes>
     )
 }

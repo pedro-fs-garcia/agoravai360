@@ -65,7 +65,7 @@ export const pricingPlans = [
       { icon: <ShoppingCart className="h-5 w-5" />, feature: "Loja com WooCommerce" },
       { icon: <BookOpen className="h-5 w-5" />, feature: "Blog para conteúdos e SEO" }
     ],
-    buttonText: "Alavancar minhas vendas online",
+    buttonText: "Alavancar minhas vendas",
     wpMessage: "Olá! Gostaria de criar uma loja virtual completa para vender meus produtos!",
     deadline: "15 dias úteis",
     popular: false,

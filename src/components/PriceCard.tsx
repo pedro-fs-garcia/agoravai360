@@ -16,7 +16,7 @@ export default function PriceCard({ plan, index }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative overflow-visible z-0"
         >
             {/* Badge de popularidade */}
             {plan.popular && (
@@ -119,7 +119,7 @@ export default function PriceCard({ plan, index }: Props) {
                     </ul>
                 </CardContent>
 
-                <CardFooter className="p-6 pt-0">
+                <CardFooter className="p-6 pt-0 justify-center">
                     <CtaButton text={plan.buttonText} secondaryIcon={false} message={plan.wpMessage} ></CtaButton>
                 </CardFooter>
             </Card>

@@ -1,7 +1,6 @@
-
 import { motion } from "framer-motion"
 import { Sparkles } from "lucide-react"
-import {pricingPlans} from "../data/pricingPlans"
+import { pricingPlans } from "../data/pricingPlans"
 import CtaPersonalizado from "./ctaPersonalizado"
 import PriceCard from "./PriceCard"
 
@@ -67,7 +66,8 @@ export default function Pricing() {
             <PriceCard plan={plan} index={index} />
           ))}
         </div>
-        <CtaPersonalizado/>
+
+        <CtaPersonalizado />
       </div>
     </section>
   )

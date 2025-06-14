@@ -1,26 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import CtaButton from "./ctaButton"
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   const navItems = [
     { href: "#servicos", label: "Serviços" },
@@ -32,10 +18,8 @@ export default function Header() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-black/95 backdrop-blur-xl shadow-2xl shadow-yellow-400/10 border-b border-yellow-400/20"
-            : "bg-transparent"
+        className={`fixed bg-black-95 top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          "bg-black/95 backdrop-blur-xl shadow-2xl shadow-yellow-400/10 border-b border-yellow-400/20"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}

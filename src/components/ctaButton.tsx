@@ -15,26 +15,34 @@ interface CtaButtonProps {
     hoverScale?: number
     hoverY?: number
     tapScale?: number
+    className?: string
 }
 
 const variants = {
     primary: "bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-400 hover:to-amber-400 text-slate-900 shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40",
-    dark: "hidden xl:flex items-center bg-slate-900/90 gap-3 px-6 py-3 text-yellow-400 hover:text-yellow-300 transition-colors duration-300 border border-yellow-400/30 rounded-lg hover:border-yellow-400/50 backdrop-blur-sm hover:bg-slate-800/90",
+    dark: "bg-slate-900/90 text-yellow-400 hover:text-yellow-300 transition-colors duration-300 border border-yellow-400/30 hover:border-yellow-400/50 backdrop-blur-sm hover:bg-slate-800/90 hidden sm:inline-flex",
     secondary: "border-2 border-yellow-400/40 text-yellow-400 hover:bg-yellow-400/10 hover:border-yellow-400/60 backdrop-blur-sm hover:shadow-lg hover:shadow-yellow-400/20",
 }
 
 const sizes = {
-    sm: "px-4 py-2.5 text-sm gap-2",
-    md: "px-6 py-3 text-base gap-2.5",
-    lg: "px-8 py-4 text-lg gap-3",
-    xl: "px-10 py-5 text-xl gap-3.5"
+    sm: "px-3 py-2 text-sm gap-1.5 min-h-[36px]",
+    md: "px-4 py-2.5 text-sm sm:text-base gap-2 min-h-[40px]",
+    lg: "px-6 py-3 text-base sm:text-lg gap-2.5 min-h-[48px]",
+    xl: "px-8 py-4 text-lg sm:text-xl gap-3 min-h-[56px]"
 }
 
 const iconSizes = {
-    sm: "h-4 w-4",
+    sm: "h-3.5 w-3.5 sm:h-4 sm:w-4",
     md: "h-4 w-4", 
-    lg: "h-5 w-5",
-    xl: "h-6 w-6"
+    lg: "h-4 w-4 sm:h-5 sm:w-5",
+    xl: "h-5 w-5 sm:h-6 sm:w-6"
+}
+
+const textSizes = {
+    sm: "text-xs sm:text-sm",
+    md: "text-sm sm:text-base",
+    lg: "text-sm sm:text-base md:text-lg",
+    xl: "text-base sm:text-lg md:text-xl"
 }
 
 
@@ -47,7 +55,8 @@ export default function CtaButton({
     secondaryIcon = true,
     hoverScale = 1.05,
     hoverY = -2,
-    tapScale = 0.95
+    tapScale = 0.95,
+    className = ""
 }: CtaButtonProps) {
 
     // Gerar URL baseado no tipo de contato
@@ -75,7 +84,7 @@ export default function CtaButton({
         return (
             <motion.div 
                 className="flex-shrink-0"
-                animate={{ x: [0, 4, 0] }} 
+                animate={{ x: [0, 3, 0] }} 
                 transition={{ duration: 1.8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             >
                 <ArrowRight className={iconSizes[size]} />
@@ -86,8 +95,10 @@ export default function CtaButton({
     const baseClasses = `
         inline-flex items-center justify-center font-semibold rounded-lg 
         transition-all duration-300 cursor-pointer select-none
+        w-full sm:w-auto max-w-full
         ${variants[variant]} 
         ${sizes[size]}
+        ${className}
     `.trim();
 
 
@@ -102,7 +113,9 @@ export default function CtaButton({
         >
             {primaryIcon && renderPrimaryIcon()}
 
-            <span className="whitespace-nowrap">{text}</span>
+            <span className={`text-center leading-tight ${textSizes[size]} px-1`}>
+                {text}
+            </span>
 
             {secondaryIcon && renderSecondaryIcon()}
         </motion.a>

@@ -6,6 +6,7 @@ import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import WhatsAppButton from "../components/WhatsappButton";
 import Hero from "@/components/Hero";
+import FAQ from "@/components/FAQ";
 
 export default function HomePage() {
     return (
@@ -17,6 +18,7 @@ export default function HomePage() {
             <Portfolio />
             <Testimonials />
             <Pricing />
+            <FAQ/>
             <WhatsAppButton />
         </main>
     )

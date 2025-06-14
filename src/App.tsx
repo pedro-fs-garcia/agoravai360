@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
         <div className="">
             <Header/>
-            <main className=''>
+            <main className='pt-12 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800'>
                 <MainRouter/>
             </main>
             <Footer/>

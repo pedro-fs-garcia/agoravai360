@@ -145,7 +145,7 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Carrossel de depoimentos */}
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-7xl mx-auto h-[500px]">
           <div className="overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div

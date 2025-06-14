@@ -12,7 +12,7 @@ export default function TestimonialCard({ testimonial, index }: Props) {
     return (
         <motion.div
             key={testimonial.id}
-            className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0"
+            className="w-full md:w-1/2 lg:w-1/3"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -65,14 +65,8 @@ export default function TestimonialCard({ testimonial, index }: Props) {
                     {/* Informações do cliente */}
                     <div className="flex items-center">
                         <div>
-                            <div className="text-sm text-slate-400">
-                                — {testimonial.name}
-                            </div>
-                            <p className="font-semibold text-white text-lg group-hover:text-yellow-400 transition-colors duration-300">
-                                {testimonial.name}
-                            </p>
-                            <p className="text-sm text-slate-400">{testimonial.position}</p>
-                            <p className="text-sm text-yellow-400 font-medium">{testimonial.company}</p>
+                            {/* <p className="text-sm text-yellow-400 font-medium">— {testimonial.company}</p> */}
+                            <p className="text-sm text-yellow-400 font-medium">— {testimonial.name}</p>
                         </div>
                     </div>
                 </CardContent>

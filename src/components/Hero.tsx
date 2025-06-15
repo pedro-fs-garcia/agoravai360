@@ -1,204 +1,232 @@
-import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+"use client"
+
+import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
+import { useEffect, useRef } from "react"
+import { Code2, Sparkles, Zap, ChevronDown } from "lucide-react"
 import CtaButton from "./ctaButton"
-import ScrollIndicator from "./ui/ScrollIndicator"
+import LiveCodeEditor from "./LiveCodeEditor"
 
-const FloatingCard = ({ delay, x, y, children }: any) => (
-  <motion.div
-    className="absolute bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-2xl"
-    style={{ left: x, top: y }}
-    initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-    animate={{ opacity: 1, scale: 1, rotate: 0 }}
-    transition={{ delay, duration: 0.8, ease: "easeOut" }}
-    whileHover={{ scale: 1.05, rotate: 2 }}
-  >
-    {children}
-  </motion.div>
+const FloatingOrb = ({ delay, size, color, duration }: any) => (
+    <motion.div
+        className={`absolute rounded-full blur-xl opacity-30 ${size} ${color}`}
+        initial={{ x: Math.random() * 800, y: Math.random() * 600, scale: 0 }}
+        animate={{
+            x: Math.random() * 800,
+            y: Math.random() * 600,
+            scale: [0, 1, 0.8, 1],
+            rotate: [0, 180, 360]
+        }}
+        transition={{
+            delay,
+            duration: duration || 20,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear"
+        }}
+    />
 )
 
-const CodeBlock = ({ delay }: any) => (
-  <motion.div
-    className="absolute right-8 top-1/2 transform -translate-y-1/2 bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4 font-mono text-sm shadow-2xl max-w-xs"
-    initial={{ opacity: 0, x: 100 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ delay, duration: 0.8 }}
-  >
-    <div className="flex items-center gap-2 mb-2">
-      <div className="w-3 h-3 bg-red-400 rounded-full" />
-      <div className="w-3 h-3 bg-yellow-400 rounded-full" />
-      <div className="w-3 h-3 bg-green-400 rounded-full" />
-    </div>
-    <div className="text-slate-300">
-      <div className="text-blue-300">&lt;website&gt;</div>
-      <div className="ml-2 text-green-300">status: <span className="text-yellow-300">"online"</span></div>
-      <div className="ml-2 text-green-300">visitors: <span className="text-yellow-300">24/7</span></div>
-      <div className="text-blue-300">&lt;/website&gt;</div>
-    </div>
-  </motion.div>
+const TechBadge = ({ icon: Icon, label, delay, color }: any) => (
+    <motion.div
+        className={`flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 backdrop-blur-sm border border-${color}-400/30 text-${color}-300`}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay, duration: 0.5 }}
+        whileHover={{ scale: 1.1, backgroundColor: `rgb(${color === 'emerald' ? '16 185 129' : color === 'blue' ? '59 130 246' : '245 158 11'} / 0.1)` }}
+    >
+        <Icon className="h-4 w-4" />
+        <span className="text-sm font-medium">{label}</span>
+    </motion.div>
 )
+
+const AnimatedText = ({ children, delay = 0 }: any) => {
+    const letters = Array.from(children)
+
+    return (
+        <motion.span className="inline-block">
+            {letters.map((letter: any, index: number) => (
+                <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        delay: delay + index * 0.05,
+                        duration: 0.6,
+                        ease: "easeOut"
+                    }}
+                    className="inline-block"
+                >
+                    {letter === ' ' ? '\u00A0' : letter}
+                </motion.span>
+            ))}
+        </motion.span>
+    )
+}
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+    const containerRef = useRef<HTMLElement>(null)
+    const { scrollYProgress } = useScroll()
 
-  useEffect(() => {
-    const handleMouseMove = (e: any) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100
-      })
-    }
+    const mouseX = useMotionValue(0)
+    const mouseY = useMotionValue(0)
 
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+    const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+    const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
-  return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background with dynamic gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 -z-20" />
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            const rect = containerRef.current?.getBoundingClientRect()
+            if (rect) {
+                mouseX.set(e.clientX - rect.left - rect.width / 2)
+                mouseY.set(e.clientY - rect.top - rect.height / 2)
+            }
+        }
 
-      {/* Animated background elements */}
-      <motion.div
-        className="absolute inset-0 opacity-20 -z-10"
-        style={{
-          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(251, 191, 36, 0.1) 0%, transparent 50%)`
-        }}
-      />
+        const container = containerRef.current
+        container?.addEventListener('mousemove', handleMouseMove)
+        return () => container?.removeEventListener('mousemove', handleMouseMove)
+    }, [mouseX, mouseY])
 
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 py-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Main content */}
-          <motion.div
-            className="space-y-8 text-white"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            {/* Badge */}
+
+    return (
+        <section
+            ref={containerRef}
+            className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-black"
+        >
+            {/* Animated Background */}
             <motion.div
-              className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full px-4 py-2 text-sm font-medium text-yellow-300"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+                className="absolute inset-0 opacity-40"
+                style={{ y: backgroundY }}
             >
-              <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-              Trazendo a sua realidade para o virtual
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_50%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(245,158,11,0.1),transparent_50%)]" />
             </motion.div>
 
-            {/* Main title */}
-            <motion.h1
-              className="text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              <motion.span
-                className="bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent"
-                animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                style={{
-                  backgroundSize: "200% 200%"
-                }}
-              >
-                Agora Vai {" "}
-              </motion.span>
+            {/* Floating Orbs */}
+            <div className="absolute inset-0 overflow-hidden">
+                <FloatingOrb delay={0} size="w-32 h-32" color="bg-emerald-500" duration={25} />
+                <FloatingOrb delay={2} size="w-20 h-20" color="bg-blue-500" duration={30} />
+                <FloatingOrb delay={4} size="w-16 h-16" color="bg-amber-500" duration={20} />
+                <FloatingOrb delay={6} size="w-24 h-24" color="bg-purple-500" duration={35} />
+                <FloatingOrb delay={8} size="w-12 h-12" color="bg-cyan-500" duration={15} />
+            </div>
 
-              <span className="text-white">360</span>
-            </motion.h1>
 
-            {/* Subtitle with enhanced impact */}
-            <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-100 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              Seu negócio merece mais que um simples{" "}
-              <motion.span
-                className="relative font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
-                whileHover={{ scale: 1.05 }}
-              >
-                site
-              </motion.span>
-            </motion.h2>
 
-            {/* Enhanced description */}
+            {/* Main Content Container */}
+            <div className="container mx-auto px-6 py-20 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    {/* Left Content */}
+                    <motion.div
+                        className="space-y-8 text-center lg:text-left"
+                        style={{ y: textY }}
+                    >
+                        {/* Tech Badges */}
+                        <motion.div
+                            className="flex flex-wrap gap-3 justify-center lg:justify-start"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <TechBadge icon={Code2} label="Tecnologia" delay={0.3} color="blue" />
+                            <TechBadge icon={Zap} label="Velocidade" delay={0.4} color="emerald" />
+                            <TechBadge icon={Sparkles} label="Resultado" delay={0.5} color="amber" />
+                        </motion.div>
+
+                        {/* Main Heading */}
+                        <div className="space-y-4">
+                            <motion.h1
+                                className="text-5xl md:text-7xl lg:text-8xl font-black leading-none"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.6 }}
+                            >
+                                <div className="bg-gradient-to-r from-yellow-500  to-amber-600 bg-clip-text text-transparent">
+                                    <AnimatedText delay={0.8}>AGORA VAI</AnimatedText>
+                                </div>
+                                <motion.div
+                                    className="text-white mt-2"
+                                    initial={{ opacity: 0, x: -100 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 1.5, duration: 0.8 }}
+                                >
+                                    360
+                                </motion.div>
+                            </motion.h1>
+
+                            <motion.div
+                                className="relative"
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 1.8, duration: 0.8 }}
+                            >
+                                <h2 className="text-2xl md:text-4xl font-light text-slate-200 max-w-2xl">
+                                    Transformamos ideias em experiências digitais{" "}
+                                    <motion.span
+                                        className="font-bold bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent"
+                                        whileHover={{ scale: 1.05 }}
+                                    >
+                                        extraordinárias
+                                    </motion.span>
+                                </h2>
+                            </motion.div>
+                        </div>
+
+                        {/* Description */}
+                        <motion.p
+                            className="text-xl text-slate-300 max-w-2xl leading-relaxed"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 2.2 }}
+                        >
+                            Desenvolvemos sites, aplicações e estratégias digitais que geram resultados reais para o seu negócio.
+                        </motion.p>
+
+                        {/* CTA Buttons */}
+                        <motion.div
+                            className="flex flex-col sm:flex-row gap-6 pt-8"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 2.6 }}
+                        >
+                            <CtaButton primaryIcon={false} text={"Iniciar Projeto"} />
+                            <a href="/#portfolio">
+                                <motion.button
+                                    className="px-8 py-4 border-2 border-slate-400/30 text-slate-300 font-semibold rounded-2xl backdrop-blur-sm hover:border-emerald-400/50 hover:text-emerald-400 transition-all duration-300"
+                                    whileHover={{ scale: 1.05, backgroundColor: "rgba(16,185,129,0.1)" }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    Ver Portfólio
+                                </motion.button>
+                            </a>
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Right Side - Interactive Demo */}
+                    <div className="relative h-full hidden lg:block">
+                        {/* Main Interactive Container */}
+                        <LiveCodeEditor />
+                        {/* Code Snippet */}
+                        {/* <CodeSnippet delay={2.5} /> */}
+                    </div>
+                </div>
+            </div>
+
+            {/* Scroll Indicator */}
             <motion.div
-              className="space-y-4 text-xl text-slate-300 max-w-2xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 3 }}
             >
-              <p>
-                Desenvolvemos <span className="text-yellow-400 font-semibold">sites e estratégias</span> que geram resultados reais.
-              </p>
-            </motion.div>
-
-            {/* CTA section */}
-            <motion.div
-              className="flex flex-col sm:flex-row gap-6 pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 }}
-            >
-              <CtaButton text="Criar Minha Presença Digital" />
-              <a href="/#portfolio">
-                <motion.button
-                  className="px-8 py-4 border-2 border-slate-400/40 text-slate-300 font-semibold rounded-lg hover:border-yellow-400/60 hover:text-yellow-400 transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <span className="text-sm">Scroll para explorar</span>
+                <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 >
-                  Ver Portfólio
-                </motion.button>
-              </a>
+                    <ChevronDown className="h-6 w-6" />
+                </motion.div>
             </motion.div>
-          </motion.div>
-
-          {/* Right side - Interactive elements */}
-          <div className="relative h-full hidden lg:block">
-            {/* Floating cards */}
-            <FloatingCard delay={1.0} x="10%" y="15%">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-400 mb-2">📱</div>
-                <div className="text-sm text-slate-300">Responsive</div>
-              </div>
-            </FloatingCard>
-
-            <FloatingCard delay={1.2} x="60%" y="25%">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400 mb-2">⚡</div>
-                <div className="text-sm text-slate-300">Ultra Rápido</div>
-              </div>
-            </FloatingCard>
-
-            <FloatingCard delay={1.4} x="20%" y="60%">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-400 mb-2">🔒</div>
-                <div className="text-sm text-slate-300">100% Seguro</div>
-              </div>
-            </FloatingCard>
-
-            <FloatingCard delay={1.6} x="70%" y="70%">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-400 mb-2">🎯</div>
-                <div className="text-sm text-slate-300">SEO Otimizado</div>
-              </div>
-            </FloatingCard>
-
-            {/* Code block */}
-            <CodeBlock delay={1.8} />
-
-            {/* Central glowing orb */}
-            <motion.div
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/20 via-amber-400/20 to-yellow-500/20 rounded-full blur-3xl"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </div>
-        </div>
-      </div>
-
-      <ScrollIndicator />
-    </section>
-  )
+        </section>
+    )
 }

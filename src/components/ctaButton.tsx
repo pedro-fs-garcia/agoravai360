@@ -2,7 +2,8 @@
 
 import contactInfo from "../data/contactInfo.json";
 import { motion } from "framer-motion"
-import { MessageCircle, ArrowRight } from 'lucide-react'
+import {  ArrowRight } from 'lucide-react'
+import { FaWhatsapp } from "react-icons/fa";
 
 
 interface CtaButtonProps {
@@ -76,7 +77,8 @@ export default function CtaButton({
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.2 }}
             >
-                <MessageCircle className={iconSizes[size]} />
+                <FaWhatsapp className={iconSizes[size]} />
+                {/* <MessageCircle className={iconSizes[size]} /> */}
             </motion.div>
         )
     }

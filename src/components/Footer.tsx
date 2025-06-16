@@ -1,7 +1,8 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react"
+import { Mail, MapPin, Phone} from "lucide-react"
 import contactInfo from "../data/contactInfo.json"
 import { formatAddress } from "@/utils/contactInfoUtils"
 import { services } from "../data/services"
+import { FaFacebook, FaGlobe, FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa"
 
 export default function Footer() {
     const currentYear = new Date().getFullYear()
@@ -16,20 +17,23 @@ export default function Footer() {
                             {contactInfo.description}
                         </p>
                         <div className="flex space-x-4">
-                            <a href={contactInfo.facebook} aria-label="Facebook" className="hover:text-white transition-colors">
-                                <Facebook size={20} />
+                            <a href={contactInfo.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-white transition-colors">
+                               <FaFacebook size={20} />
                             </a>
-                            <a href={contactInfo.instagram} aria-label="Instagram" className="hover:text-white transition-colors">
-                                <Instagram size={20} />
+                            <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-white transition-colors">
+                                <FaInstagram size={20} />
                             </a>
-                            <a href={contactInfo.linkedin} aria-label="LinkedIn" className="hover:text-white transition-colors">
-                                <Linkedin size={20} />
+                            <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white transition-colors">
+                                <FaLinkedin size={20} />
                             </a>
-                            <a href={contactInfo.youtube} aria-label="LinkedIn" className="hover:text-white transition-colors">
-                                <Youtube size={20} />
+                            <a href={contactInfo.youtube} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white transition-colors">
+                                <FaYoutube size={20} />
                             </a>
-                            <a href={contactInfo.tiktok} aria-label="TikTok" className="hover:text-white transition-colors">
-                                <Linkedin size={20} />
+                            <a href={contactInfo.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="hover:text-white transition-colors">
+                                <FaTiktok size={20} />
+                            </a>
+                            <a href={contactInfo.website} target="_blank" rel="noopener noreferrer" aria-label="website" className="hover:text-white transition-colors">
+                                <FaGlobe size={20}/>
                             </a>
                         </div>
                     </div>
@@ -106,14 +110,6 @@ export default function Footer() {
                 <div className="border-t border-gray-800 pt-8 mt-8 text-sm text-gray-400">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p>&copy; {currentYear} Agora Vai 360. Todos os direitos reservados.</p>
-                        <div className="flex space-x-6 mt-4 md:mt-0">
-                            {/* <a href="#" className="hover:text-white transition-colors">
-                                Política de Privacidade
-                            </a>
-                            <a href="#" className="hover:text-white transition-colors">
-                                Termos de Uso
-                            </a> */}
-                        </div>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { MessageCircle } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import contactInfo from "../data/contactInfo.json"
+import { FaWhatsapp } from "react-icons/fa"
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -15,7 +15,7 @@ export default function WhatsAppButton() {
     }, 2000)
 
     const tooltipTimer = setTimeout(() => {
-      setShowTooltip(true)
+      setShowTooltip(false)
     }, 5000)
 
     return () => {
@@ -37,7 +37,7 @@ export default function WhatsAppButton() {
                 className="absolute bottom-full right-0 mb-2 bg-white rounded-lg shadow-lg p-3 max-w-xs"
               >
                 <p className="text-gray-700 text-sm">
-                  Olá! <br /> Fale conosco no WhatsApp!
+                  Fale conosco no WhatsApp!
                 </p>
                 <div className="absolute bottom-0 right-4 transform translate-y-1/2 rotate-45 w-2 h-2 bg-white"></div>
                 <button
@@ -59,14 +59,14 @@ export default function WhatsAppButton() {
             className="relative"
           >
             <a
-              href={`https://wa.me/${contactInfo.whatsapp}?text=Olá! Vi o seu site e gostaria de saber mais sobre os serviços da Agora Vai 360.`}
+              href={`https://wa.me/${contactInfo.whatsapp}?text=Olá! Visitei o seu site e gostaria de saber mais sobre os serviços da Agora Vai 360.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-16 h-16 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors"
               aria-label="Contato via WhatsApp"
               onClick={() => setShowTooltip(false)}
             >
-              <MessageCircle className="h-8 w-8 text-white" />
+              <FaWhatsapp className="h-8 w-8 text-white" />
             </a>
             <span className="absolute top-0 right-0 flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>

@@ -37,7 +37,7 @@ export default function WhatsAppButton() {
                 className="absolute bottom-full right-0 mb-2 bg-white rounded-lg shadow-lg p-3 max-w-xs"
               >
                 <p className="text-gray-700 text-sm">
-                  Olá! Precisa de ajuda com marketing digital? Fale conosco no WhatsApp!
+                  Olá! <br /> Fale conosco no WhatsApp!
                 </p>
                 <div className="absolute bottom-0 right-4 transform translate-y-1/2 rotate-45 w-2 h-2 bg-white"></div>
                 <button

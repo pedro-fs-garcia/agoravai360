@@ -150,18 +150,6 @@ export default function ArgumentsSection() {
                     transition={{ delay: 0.6 }}
                     viewport={{ once: true }}
                 >
-                    <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                        <span className="bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent">
-                            Construa sua liberdade
-                        </span>{" "}
-                        <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">
-                            digital
-                        </span>
-                    </h3>
-                    <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-                        Não alugue espaço no terreno dos outros. Tenha um site com a sua cara — e com seu nome na porta.
-                    </p>
-
                     <CtaButton
                         text="Quero Meu Site Profissional"
                         message="Olá! Quero criar um site profissional para meu negócio. Vamos conversar?"

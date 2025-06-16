@@ -2,9 +2,10 @@
 
 import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
 import { useEffect, useRef } from "react"
-import { Code2, Sparkles, Zap, ChevronDown } from "lucide-react"
+import { Code2, Sparkles, Zap } from "lucide-react"
 import CtaButton from "./ctaButton"
 import LiveCodeEditor from "./LiveCodeEditor"
+import ScrollIndicator from "./ui/ScrollIndicator"
 
 const FloatingOrb = ({ delay, size, color, duration }: any) => (
     <motion.div
@@ -204,29 +205,13 @@ export default function Hero() {
 
                     {/* Right Side - Interactive Demo */}
                     <div className="relative h-full hidden lg:block">
-                        {/* Main Interactive Container */}
                         <LiveCodeEditor />
-                        {/* Code Snippet */}
-                        {/* <CodeSnippet delay={2.5} /> */}
                     </div>
                 </div>
             </div>
 
             {/* Scroll Indicator */}
-            <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 3 }}
-            >
-                <span className="text-sm">Scroll para explorar</span>
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                >
-                    <ChevronDown className="h-6 w-6" />
-                </motion.div>
-            </motion.div>
+            <ScrollIndicator/>
         </section>
     )
 }

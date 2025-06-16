@@ -23,7 +23,11 @@ export default function CtaPersonalizado() {
                 Cada negócio é único. Vamos criar uma estratégia sob medida para suas necessidades específicas.
               </p>
 
-              <CtaButton text="Solicitar Proposta Personalizada" secondaryIcon={false}  />
+              <CtaButton 
+                text="Solicitar Proposta Personalizada" 
+                secondaryIcon={false}  
+                message="Olá! Gostaria de saber mais sobre propostas personalizadas de serviços da Agora Vai 360 para o meu negócio. Podemos conversar?"
+              />
 
             </div>
           </div>

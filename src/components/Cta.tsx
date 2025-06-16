@@ -95,7 +95,10 @@ export default function Cta() {
             viewport={{ once: true }}
           >
 
-            <CtaButton text={"Falar no WhatsApp"} variant="primary" />
+            <CtaButton 
+              text={"Falar no WhatsApp"} 
+              variant="primary" 
+            />
 
           </motion.div>
 

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import CtaButton from "./ctaButton"
 import projects from "../data/projects.json"
 import PortfolioCard from "./PortfolioCard"
+import { Trophy } from "lucide-react"
 
 
 export default function Portfolio() {
@@ -12,31 +13,6 @@ export default function Portfolio() {
       id="portfolio"
       className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden"
     >
-      {/* Background decorativo */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%), 
-                           radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)`,
-          }}
-        />
-      </div>
-
-      {/* Formas decorativas */}
-      <motion.div
-        className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-r from-yellow-400/10 to-blue-400/10 rounded-full filter blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-      />
-
       <div className="container mx-auto px-4 relative z-10">
         {/* Header da seção */}
         <motion.div
@@ -47,12 +23,13 @@ export default function Portfolio() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-blue-500/20 backdrop-blur-sm rounded-full border border-yellow-400/30 mb-6"
+            className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 bg-gradient-to-r from-yellow-500/20 to-blue-500/20 backdrop-blur-sm rounded-full border border-yellow-400/30 mb-4 sm:mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
+            <Trophy className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400" />
             <span className="text-sm font-medium text-yellow-100">Projetos de Sucesso</span>
           </motion.div>
 
@@ -89,7 +66,12 @@ export default function Portfolio() {
           viewport={{ once: true }}
         >
           <p className="text-slate-300 mb-6 text-lg">Gostou dos nossos resultados? Vamos criar algo incrível para o seu negócio também!</p>
-          <CtaButton text="Quero Resultados Como Esse" primaryIcon={false} size="lg" />
+          <CtaButton 
+            text="Quero Resultados Como Esse" 
+            primaryIcon={false} 
+            size="lg" 
+            message="Olá! Gostei do portfolio de sites da Agora Vai 360 e gostaria de um site para o meu negócio."
+          />
         </motion.div>
       </div>
     </section>

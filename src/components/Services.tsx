@@ -116,7 +116,7 @@ export default function Services() {
             <CtaButton 
               text="Fale Conosco Agora" 
               primaryIcon={false} 
-              message="Olá! Estou vindo do seu site e gostaria de saber mais sobre os serviços de desenvolvimento de sites da Agora Vai 360." 
+              message="Olá! Gostaria de saber mais sobre os serviços de desenvolvimento de sites da Agora Vai 360." 
             />
           </div>
         </motion.div>

@@ -190,7 +190,11 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 2.6 }}
                         >
-                            <CtaButton primaryIcon={false} text={"Iniciar Projeto"} />
+                            <CtaButton 
+                                primaryIcon={false} 
+                                text={"Iniciar Projeto"} 
+                                message="Olá! Gostaria de iniciar o projeto de um site. Vamos conversar?"
+                            />
                             <a href="/#portfolio">
                                 <motion.button
                                     className="px-8 py-4 border-2 border-slate-400/30 text-slate-300 font-semibold rounded-2xl backdrop-blur-sm hover:border-emerald-400/50 hover:text-emerald-400 transition-all duration-300"
@@ -211,7 +215,9 @@ export default function Hero() {
             </div>
 
             {/* Scroll Indicator */}
-            <ScrollIndicator/>
+            <div className="sm:mt-12 hidden lg:block">
+                <ScrollIndicator />
+            </div>
         </section>
     )
 }

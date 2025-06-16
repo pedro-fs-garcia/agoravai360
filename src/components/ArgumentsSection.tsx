@@ -5,7 +5,6 @@ import { Globe } from 'lucide-react'
 import CtaButton from "./ctaButton"
 import { benefits } from "../data/benefits"
 import BenefitCard from "./BenefitCard"
-import { useState } from "react"
 
 const features = [
     "Liberdade total de conteúdo",
@@ -17,7 +16,6 @@ const features = [
 ]
 
 export default function ArgumentsSection() {
-    const [visibleCount, setVisibleCount] = useState(3);
     return (
         <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 relative overflow-hidden">
             <motion.div
@@ -81,25 +79,10 @@ export default function ArgumentsSection() {
 
                 {/* Grid de benefícios */}
                 <div className="grid md:grid-cols-3 gap-8 mb-8">
-                    {benefits.slice(0, visibleCount).map((benefit, i) => (
+                    {benefits.map((benefit, i) => (
                         <BenefitCard index={i} benefit={benefit} />
                     ))}
                 </div>
-                {visibleCount < benefits.length ? (
-                    <button
-                        onClick={() => setVisibleCount(benefits.length)}
-                        className="btn-primary mx-auto block mb-16 hover:underline"
-                    >
-                        Mostrar mais
-                    </button>
-                ) : (
-                    <button
-                        onClick={() => setVisibleCount(3)}
-                        className="btn-primary mx-auto block mb-16 hover:underline"
-                    >
-                        Mostrar menos
-                    </button>
-                )}
 
                 {/* Contraste com redes sociais */}
                 <motion.div

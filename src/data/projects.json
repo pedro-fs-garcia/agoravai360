@@ -41,10 +41,10 @@
   },
   {
     "id": 6,
-    "title": "Landing Page Drones",
-    "category": "landing page",
-    "image": "/portfolio/Landinpage-drones.png",
-    "description": "Landing page moderna e responsiva com foco em captação de leads.",
-    "tags": ["Landing Page", "SEO", "Responsivo"]
+    "title": "Utilidades SJC",
+    "category": "loja virtual",
+    "image": "/portfolio/Utilidade-SJC.jpg",
+    "description": "Loja virtual moderna e responsiva, focada em clareza ao usuário.",
+    "tags": ["Loja Virtual", "SEO", "Responsivo", "E-commerce"]
   }
 ]

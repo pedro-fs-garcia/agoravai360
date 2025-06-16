@@ -18,8 +18,8 @@ export default function Header() {
   return (
     <>
       <motion.header
-        className={`fixed bg-black-95 top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          "bg-black/95 backdrop-blur-xl shadow-2xl shadow-yellow-400/10 border-b border-yellow-400/20"
+        className={`fixed bg-slate-900 top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          " backdrop-blur-xl shadow-2xl shadow-yellow-400/10 border-b border-yellow-400/20"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -119,7 +119,7 @@ export default function Header() {
 
             {/* Mobile Menu */}
             <motion.div
-              className="fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-gradient-to-b from-black to-gray-900 z-50 lg:hidden border-l border-yellow-400/20"
+              className="fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-gradient-to-b from-slate-900 to-gray-900 z-50 lg:hidden border-l border-yellow-400/20"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}

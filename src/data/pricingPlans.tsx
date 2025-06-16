@@ -11,6 +11,7 @@ import {
   Globe,
   BookOpen,
   Home,
+  CalendarClock,
 } from "lucide-react"
 
 export const pricingPlans = [
@@ -25,7 +26,8 @@ export const pricingPlans = [
       { icon: <Image className="h-5 w-5" />, feature: "Banner e artes visuais" },
       { icon: <PenLine className="h-5 w-5" />, feature: "Copywriting e textos otimizados" },
       { icon: <MessageCircle className="h-5 w-5" />, feature: "Botão para WhatsApp" },
-      { icon: <Globe className="h-5 w-5" />, feature: "Portfólio de projetos" }
+      { icon: <Globe className="h-5 w-5" />, feature: "Portfólio de projetos" },
+      {icon: <CalendarClock className="h-5 w-5" /> , feature: "3 dias úteis"}
     ],
     buttonText: "Quero uma landing page",
     wpMessage: "Olá! Vi que vocês constroem Landing Pages e gostaria de começar agora!",
@@ -44,7 +46,8 @@ export const pricingPlans = [
       { icon: <PenLine className="h-5 w-5" />, feature: "Copy e textos institucionais" },
       { icon: <MessageCircle className="h-5 w-5" />, feature: "Botão para WhatsApp" },
       { icon: <ShoppingCart className="h-5 w-5" />, feature: "Integração com WooCommerce" },
-      { icon: <BookOpen className="h-5 w-5" />, feature: "Seção de blog" }
+      { icon: <BookOpen className="h-5 w-5" />, feature: "Seção de blog" },
+      {icon: <CalendarClock className="h-5 w-5" /> , feature: "7 dias úteis"}
     ],
     buttonText: "Solicitar meu site institucional",
     wpMessage: "Olá! Gostaria de criar um site institucional para o meu negócio!",
@@ -63,7 +66,8 @@ export const pricingPlans = [
       { icon: <PenLine className="h-5 w-5" />, feature: "Textos e descrições de produtos" },
       { icon: <MessageCircle className="h-5 w-5" />, feature: "Botão WhatsApp para suporte e vendas" },
       { icon: <ShoppingCart className="h-5 w-5" />, feature: "Loja com WooCommerce" },
-      { icon: <BookOpen className="h-5 w-5" />, feature: "Blog para conteúdos e SEO" }
+      { icon: <BookOpen className="h-5 w-5" />, feature: "Blog para conteúdos e SEO" },
+      {icon: <CalendarClock className="h-5 w-5" /> , feature: "15 dias úteis"}
     ],
     buttonText: "Alavancar minhas vendas",
     wpMessage: "Olá! Gostaria de criar uma loja virtual completa para vender meus produtos!",
@@ -82,7 +86,8 @@ export const pricingPlans = [
       { icon: <PenLine className="h-5 w-5" />, feature: "Textos institucionais e comerciais" },
       { icon: <MessageCircle className="h-5 w-5" />, feature: "Contato via WhatsApp" },
       { icon: <ShoppingCart className="h-5 w-5" />, feature: "WooCommerce modo catálogo" },
-      { icon: <Home className="h-5 w-5" />, feature: "Ideal para hotéis, imobiliárias e clínicas" }
+      { icon: <Home className="h-5 w-5" />, feature: "Ideal para hotéis, imobiliárias e clínicas" },
+      {icon: <CalendarClock className="h-5 w-5" /> , feature: "15 dias úteis"}
     ],
     buttonText: "Exibir meus produtos online",
     wpMessage: "Olá! Gostaria de criar uma vitrine virtual para mostrar meus serviços e produtos!",

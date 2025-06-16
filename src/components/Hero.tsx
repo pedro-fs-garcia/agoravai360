@@ -161,13 +161,23 @@ export default function Hero() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 1.8, duration: 0.8 }}
                             >
-                                <h2 className="text-2xl md:text-4xl font-light text-slate-200 max-w-2xl">
+                                {/* <h2 className="text-2xl md:text-4xl font-light text-slate-200 max-w-2xl">
                                     Transformamos ideias em experiências digitais{" "}
                                     <motion.span
                                         className="font-bold bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent"
                                         whileHover={{ scale: 1.05 }}
                                     >
                                         extraordinárias
+                                    </motion.span>
+                                </h2> */}
+
+                                <h2 className="text-2xl md:text-4xl font-light text-slate-200 max-w-2xl">
+                                    Trazendo sua realidade para o{" "}
+                                    <motion.span
+                                        className="font-bold bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent"
+                                        whileHover={{ scale: 1.05 }}
+                                    >
+                                        virtual
                                     </motion.span>
                                 </h2>
                             </motion.div>

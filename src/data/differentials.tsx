@@ -6,6 +6,8 @@ import {
   BarChart2,
   Sliders,
   Star,
+  Wrench,
+  PenTool,
 } from "lucide-react"
 
 export const differentials = [
@@ -43,5 +45,15 @@ export const differentials = [
     icon: <BarChart2 className="h-6 w-6" />,
     title: "Monitoramento Constante",
     description: "Monitoramento constante com métricas claras de performance para acompanhar resultados em tempo real.",
+  },
+  {
+    icon: <Wrench className="h-6 w-6" />,
+    title: "Suporte Técnico",
+    description: "Suporte contínuo para correções, atualizações e manutenção do seu site.",
+  },
+  {
+    icon: <PenTool className="h-6 w-6" />,
+    title: "Design Personalizado",
+    description: "Layout exclusivo focado em UX/UI alinhado à identidade visual da sua marca.",
   },
 ]

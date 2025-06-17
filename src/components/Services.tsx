@@ -14,33 +14,6 @@ export default function Services() {
       id="servicos"
       className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden"
     >
-      {/* Elementos decorativos de fundo */}
-      <motion.div
-        className="absolute top-10 sm:top-20 left-4 sm:left-10 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-r from-yellow-400/10 to-blue-400/10 rounded-full filter blur-2xl sm:blur-3xl"
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.1, 0.3, 0.1],
-        }}
-        transition={{
-          duration: 7,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-      />
-      
-      <motion.div
-        className="absolute bottom-20 right-4 sm:right-20 w-16 h-16 sm:w-28 sm:h-28 bg-gradient-to-r from-blue-400/10 to-yellow-400/10 rounded-full filter blur-2xl sm:blur-3xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.1, 0.25, 0.1],
-        }}
-        transition={{
-          duration: 9,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-      />
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Cabeçalho da seção */}
         <div className="text-center mb-12 sm:mb-16">

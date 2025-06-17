@@ -4,12 +4,12 @@ import type React from "react"
 
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { Send, User, Mail, Phone, FileText, CheckCircle } from "lucide-react"
 import { FaMailBulk } from "react-icons/fa"
 import { submitFormSpree, submitWpMessage } from "@/utils/sendEmail"
 import RodapeContato from "./rodapeContato"
 import PainelGoodSubmission from "./painelGoodSubmission"
 import Formulario from "./Formulario"
+import { validateForm } from "@/utils/formUtils"
 
 interface FormData {
   name: string
@@ -38,37 +38,10 @@ export default function Doubts() {
     }
   }
 
-  const validateForm = (): boolean => {
-    const newErrors: Partial<FormData> = {}
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Nome é obrigatório"
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "E-mail é obrigatório"
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "E-mail inválido"
-    }
-
-    if (!formData.whatsapp.trim()) {
-      newErrors.whatsapp = "WhatsApp é obrigatório"
-    } else if (!/^[\d\s$$$$\-+]+$/.test(formData.whatsapp)) {
-      newErrors.whatsapp = "Número de WhatsApp inválido"
-    }
-
-    if (!formData.description.trim()) {
-      newErrors.description = "Descrição do projeto é obrigatória"
-    }
-
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (!validateForm()) {
+    if (!validateForm(formData, setErrors)) {
       return
     }
 

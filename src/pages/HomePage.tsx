@@ -2,11 +2,11 @@ import ArgumentsSection from "@/components/ArgumentsSection";
 import Cta from "../components/Cta";
 import Portfolio from "../components/Portfolio";
 import Pricing from "../components/Pricing";
-import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import WhatsAppButton from "../components/WhatsappButton";
-import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
+import Services2 from "@/components/Services2";
+import FAQ2 from "@/components/FAQ2";
 
 export default function HomePage() {
     return (
@@ -15,12 +15,14 @@ export default function HomePage() {
             {/* <Hero2></Hero2> */}
             <Hero/>
             <ArgumentsSection/>
-            <Services />
+            {/* <Services /> */}
+            <Services2></Services2>
             <Cta />
             <Portfolio />
             <Testimonials />
             <Pricing />
-            <FAQ/>
+            {/* <FAQ/> */}
+            <FAQ2/>
             <WhatsAppButton />
         </main>
     )

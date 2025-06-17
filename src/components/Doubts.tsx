@@ -115,11 +115,6 @@ export default function Doubts() {
             /* Tela de Sucesso */
             <PainelGoodSubmission resetForm={resetForm} />
           )}
-
-          {/* Informações de contato */}
-          {!isSubmitted && (
-            <RodapeContato />
-          )}
         </div>
       </div>
     </motion.div>

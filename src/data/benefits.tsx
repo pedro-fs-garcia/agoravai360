@@ -46,9 +46,9 @@ export const benefits = [
     title: "Atendimento ao Cliente",
     description: "Comunicação direta e eficiente com seus clientes por meio de canais oficiais.",
   },
-  {
-    icon: <TrendingUp className="h-6 w-6" />,
-    title: "Crescimento Exponencial",
-    description: "Um site profissional que potencializa sua marca e acelera o crescimento do seu negócio.",
-  },
+  // {
+  //   icon: <TrendingUp className="h-6 w-6" />,
+  //   title: "Crescimento Exponencial",
+  //   description: "Um site profissional que potencializa sua marca e acelera o crescimento do seu negócio.",
+  // },
 ]

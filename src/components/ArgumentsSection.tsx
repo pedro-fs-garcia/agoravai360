@@ -78,7 +78,7 @@ export default function ArgumentsSection() {
                 </motion.div>
 
                 {/* Grid de benefícios */}
-                <div className="grid md:grid-cols-3 gap-8 mb-8">
+                <div className="grid md:grid-cols-3 gap-8 mb-16">
                     {benefits.map((benefit, i) => (
                         <BenefitCard index={i} benefit={benefit} />
                     ))}
@@ -86,7 +86,7 @@ export default function ArgumentsSection() {
 
                 {/* Contraste com redes sociais */}
                 <motion.div
-                    className="text-center mb-16"
+                    className="text-center mb-8"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}

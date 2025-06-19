@@ -72,7 +72,7 @@ export default function ArgumentsSection() {
                         viewport={{ once: true }}
                     >
                         <p className="text-lg text-slate-200 leading-relaxed">
-                            Enquanto você aposta nas redes, o jogo muda. Algoritmos mudam. Regras mudam. Mas seu site continua firme — vendendo, apresentando e fortalecendo sua marca.
+                           Você perde dinheiro todos os dias se sua empresa não tem um site profissional. A Agora Vai 360 cria sites e landing pages otimizadas para gerar vendas, com design moderno, SEO e estratégias digitais que realmente funcionam.
                         </p>
                     </motion.div>
                 </motion.div>

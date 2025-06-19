@@ -14,12 +14,12 @@ export default function HomePage() {
             {/* <Hero /> */}
             {/* <Hero2></Hero2> */}
             <Hero/>
-            <ArgumentsSection/>
-            {/* <Services /> */}
-            <Services2></Services2>
+            <Services2/>
             <Cta />
             <Portfolio />
             <Testimonials />
+            <ArgumentsSection/>
+            {/* <Services /> */}
             <Pricing />
             {/* <FAQ/> */}
             <FAQ2/>

@@ -4,8 +4,8 @@ import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
 import { useEffect, useRef } from "react"
 import { Code2, Sparkles, Zap } from "lucide-react"
 import CtaButton from "./ctaButton"
-import LiveCodeEditor from "./LiveCodeEditor"
 import ScrollIndicator from "./ui/ScrollIndicator"
+import ImageComponent from "./ui/imageComponent"
 
 const FloatingOrb = ({ delay, size, color, duration }: any) => (
     <motion.div
@@ -137,60 +137,53 @@ export default function Hero() {
                         {/* Main Heading */}
                         <div className="space-y-4">
                             <motion.h1
-                                className="text-5xl md:text-7xl lg:text-8xl font-black leading-none"
+                                className="text-3xl md:text-3xl lg:text-4xl font-black leading-none"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.6 }}
                             >
-                                <div className="bg-gradient-to-r from-yellow-500  to-amber-600 bg-clip-text text-transparent">
-                                    <AnimatedText delay={0.8}>AGORA VAI</AnimatedText>
+                                <div className="text-white">
+                                    <AnimatedText delay={0.8}>Seu Negócio Precisa Vender Mais?{" "}</AnimatedText>
                                 </div>
                                 <motion.div
-                                    className="text-white mt-2"
+                                    className="bg-gradient-to-r from-yellow-500  to-amber-600 bg-clip-text text-transparent"
+                                    // className="text-white mt-2"
                                     initial={{ opacity: 0, x: -100 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 1.5, duration: 0.8 }}
                                 >
-                                    360
+                                    Crie um Site Profissional, Moderno e Que Converte!
                                 </motion.div>
                             </motion.h1>
 
-                            <motion.div
+                            {/* <motion.div
                                 className="relative"
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 1.8, duration: 0.8 }}
                             >
-                                {/* <h2 className="text-2xl md:text-4xl font-light text-slate-200 max-w-2xl">
-                                    Transformamos ideias em experiências digitais{" "}
-                                    <motion.span
-                                        className="font-bold bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent"
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        extraordinárias
-                                    </motion.span>
-                                </h2> */}
-
-                                <h2 className="text-2xl md:text-4xl font-light text-slate-200 max-w-2xl">
+                                <h2 className="text-xl md:text-xl font-light text-slate-200 max-w-2xl">
                                     Trazendo sua realidade para o{" "}
                                     <motion.span
                                         className="font-bold bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent"
                                         whileHover={{ scale: 1.05 }}
                                     >
-                                        virtual
+                                        Virtual
                                     </motion.span>
                                 </h2>
-                            </motion.div>
+                            </motion.div> */}
                         </div>
 
                         {/* Description */}
                         <motion.p
-                            className="text-xl text-slate-300 max-w-2xl leading-relaxed"
+                            className="text-lg text-slate-300 max-w-2xl leading-relaxed"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 2.2 }}
                         >
-                            Desenvolvemos sites, aplicações e estratégias digitais que geram resultados reais para o seu negócio.
+                            Na Agora Vai 360, desenvolvemos Sites, Landing Pages e Estratégias de
+                            Marketing Digital que geram resultados reais para o seu negócio.
+
                         </motion.p>
 
                         {/* CTA Buttons */}
@@ -200,10 +193,10 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 2.6 }}
                         >
-                            <CtaButton 
-                                primaryIcon={false} 
-                                text={"Iniciar Projeto"} 
-                                message="Olá! Gostaria de iniciar o projeto de um site. Vamos conversar?"
+                            <CtaButton
+                                primaryIcon={false}
+                                text={"Solicitar Orçamento"}
+                                message="Olá! Gostaria de solicitar um orçamento para um site. Vamos conversar?"
                             />
                             <a href="/#portfolio">
                                 <motion.button
@@ -219,7 +212,8 @@ export default function Hero() {
 
                     {/* Right Side - Interactive Demo */}
                     <div className="relative h-full hidden lg:block">
-                        <LiveCodeEditor />
+                        {/* <LiveCodeEditor /> */}
+                        <ImageComponent imageUrl={"/images/ai_img_from_pixabay.png"} />
                     </div>
                 </div>
             </div>

@@ -58,50 +58,6 @@ export default function Cta() {
             <span className="text-sm font-medium text-yellow-100">Transforme Seu Negócio Agora</span>
           </motion.div>
 
-          {/* Título principal */}
-          <motion.h2
-            className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            Pronto para{" "}
-            <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-400 bg-clip-text text-transparent">
-              transformar
-            </span>
-            <br />
-            sua presença digital?
-          </motion.h2>
-
-          {/* Subtítulo */}
-          <motion.p
-            className="text-xl md:text-2xl mb-12 text-slate-200 max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Entre em contato agora mesmo e descubra como podemos ajudar seu negócio a{" "}
-            <span className="text-yellow-400 font-semibold">crescer exponencialmente</span> no ambiente digital.
-          </motion.p>
-
-          {/* Botões de ação */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-
-            <CtaButton 
-              text={"Falar no WhatsApp"} 
-              variant="primary" 
-            />
-
-          </motion.div>
-
           {/* Seção de benefícios */}
           <motion.div
             className="bg-gradient-to-br from-slate-800/50 to-blue-900/30 backdrop-blur-sm rounded-2xl border border-slate-600/30 p-8 md:p-12 shadow-2xl shadow-blue-900/20"
@@ -117,7 +73,8 @@ export default function Cta() {
               transition={{ delay: 0.7 }}
               viewport={{ once: true }}
             >
-              Por que escolher a <span className="text-yellow-400">Agora Vai 360</span>?
+              Mais Que um Site, Nós Entregamos <br />
+              <span className="text-yellow-400">Resultados Reais Para o Seu Negócio</span>
             </motion.h3>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -150,7 +107,7 @@ export default function Cta() {
           </motion.div>
 
           <motion.div
-            className="mt-12 text-center"
+            className="mt-12 mb-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
@@ -163,6 +120,22 @@ export default function Cta() {
             <p className="text-sm text-slate-400">
               Especialistas em transformação digital para pequenas e médias empresas
             </p>
+          </motion.div>
+
+          {/* Botões de ação */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-6 justify-center mb-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+
+            <CtaButton
+              text={"Falar no WhatsApp"}
+              variant="primary"
+            />
+
           </motion.div>
         </motion.div>
       </div>

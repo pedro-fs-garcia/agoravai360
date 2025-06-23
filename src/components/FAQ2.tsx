@@ -93,7 +93,7 @@ export default function FAQ2() {
                                 className="space-y-4"
                             >
                                 {filteredFAQ.map((item, index) => (
-                                    <FaqCard key={item.id} item={item} isOpen={isOpen} toggleItem={toggleItem} index={index} />
+                                    <FaqCard key={item.question} item={item} isOpen={isOpen} toggleItem={toggleItem} index={index} />
                                 ))}
                             </motion.div>
                         </AnimatePresence>
@@ -131,7 +131,7 @@ export default function FAQ2() {
                                         { icon: <Clock className="h-5 w-5" />, title: "Horário", info: "Seg-Sex 8h às 18h" },
                                         { icon: <Shield className="h-5 w-5" />, title: "Suporte", info: "Atendimento especializado" },
                                     ].map((item) => (
-                                        <div>
+                                        <div key={item.title}>
                                             <div className="flex items-center gap-3">
                                                 <div className="w-10 h-10 text-white bg-gradient-to-r from-blue-500 to-slate-800 rounded-full flex items-center justify-center">
                                                     {item.icon}

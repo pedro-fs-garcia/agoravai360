@@ -14,6 +14,7 @@ export default function ImageComponent({ imageUrl }: Props) {
             <img
                 src={imageUrl}
                 className="w-full h-[500px] lg:h-[600px] object-cover"
+                alt="Imagem de um projeto"
             />
 
             {/* Overlay com gradiente */}

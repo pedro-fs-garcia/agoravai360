@@ -157,7 +157,7 @@ export default function Testimonials() {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 {visibleTestimonials.map((testimonial:any, index:number) => (
-                  <TestimonialCard testimonial={testimonial} index={index}  />
+                  <TestimonialCard testimonial={testimonial} index={index}  key={testimonial.name + testimonial.company}/>
                 ))}
 
               </motion.div>
@@ -196,9 +196,9 @@ export default function Testimonials() {
 
         {/* Indicadores de página */}
         <div className="flex justify-center mt-12 gap-2">
-          {testimonials.map((_, index) => (
+            {testimonials.map((_, index) => (
             <motion.button
-              key={index}
+              key={_.name + _.company}
               onClick={() => goToSlide(index)}
               className={`h-3 w-3 rounded-full transition-all duration-300 ${
                 index >= currentIndex && index < currentIndex + itemsPerView

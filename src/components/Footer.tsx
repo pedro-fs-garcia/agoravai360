@@ -42,7 +42,7 @@ export default function Footer() {
                         <h3 className="text-xl font-bold text-white mb-4">Serviços</h3>
                         <ul className="space-y-2">
                             {services.slice(0,6).map((service) => (
-                                <li>
+                                <li key={service.title}>
                                     <a href="#servicos" className="hover:text-white transition-colors">
                                         {service.title}
                                     </a>

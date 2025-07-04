@@ -8,7 +8,7 @@ type Props = {
 export default function PortfolioCard({ project, index }: Props) {
     return (
         <motion.div
-            key={project.id}
+            key={project.title}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -19,7 +19,7 @@ export default function PortfolioCard({ project, index }: Props) {
                 {/* Imagem do projeto */}
                 <div className="relative h-64 overflow-hidden">
                     <img
-                        src={project.image || "/placeholder.svg"}
+                        src={project.image}
                         alt={project.title}
                         className="absolute w-full h-auto animate-scroll-image"
                     />
@@ -41,9 +41,9 @@ export default function PortfolioCard({ project, index }: Props) {
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag: string, tagIndex: number) => (
+                        {project.tags.map((tag: string) => (
                             <span
-                                key={tagIndex}
+                                key={tag}
                                 className="px-3 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-full border border-slate-600/30"
                             >
                                 {tag}

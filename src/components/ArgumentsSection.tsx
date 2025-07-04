@@ -80,7 +80,7 @@ export default function ArgumentsSection() {
                 {/* Grid de benefícios */}
                 <div className="grid md:grid-cols-3 gap-8 mb-16">
                     {benefits.map((benefit, i) => (
-                        <BenefitCard index={i} benefit={benefit} />
+                        <BenefitCard index={i} benefit={benefit} key={benefit.title} />
                     ))}
                 </div>
 

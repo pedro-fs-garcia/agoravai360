@@ -53,7 +53,7 @@ export default function Portfolio() {
           viewport={{ once: true }}
         >
           {projects.map((project, index) => (
-            <PortfolioCard project={project} index={index} />
+            <PortfolioCard project={project} index={index} key={project.title} />
           ))}
         </motion.div>
 

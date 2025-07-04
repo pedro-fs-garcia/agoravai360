@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Sabor da Vózira",
     "company": "Sabor da Vózira",
-    "avatar": "/placeholder.svg?height=100&width=100",
+    "avatar": "",
     "content":
       "Estamos extremamente satisfeitos com o trabalho da Agora vai 360! Desde o primeiro contato, fomos atendidos com muita atenção, profissionalismo e agilidade. A equipe entendeu exatamente o que precisávamos para valorizar nossos produtos e traduziu isso em um catálogo moderno, bem estruturado e visualmente atrativo.",
     "rating": 5,
@@ -13,7 +13,7 @@
     "id": 2,
     "name": "Alphamore Imóveis",
     "company": "Alphamore Imóveis",
-    "avatar": "/placeholder.svg?height=100&width=100",
+    "avatar": "",
     "content":
       "Serviços de qualidade e ótimo custo benefício. Serviços entregues sempre no prazo e boa qualidade.",
     "rating": 5,
@@ -23,7 +23,7 @@
     "id": 3,
     "name": "Utilidade SJC",
     "company": "",
-    "avatar": "/placeholder.svg?height=100&width=100",
+    "avatar": "",
     "content":
       "Um ótimo trabalho, cumpriram com o prazo, e o preço foi o melhor da região. Aprovamos e indicamos o sserviços deles.",
     "rating": 5,
@@ -33,7 +33,7 @@
     "id": 4,
     "name": "Premium Movelaria",
     "company": "",
-    "avatar": "/placeholder.svg?height=100&width=100",
+    "avatar": "",
     "content":
       "Recomendamos. Realiazaram noso serviço no prazo, com qualidade e atendimanto excelentes.",
     "rating": 5,
@@ -43,7 +43,7 @@
     "id": 5,
     "name": "Ótica Lunica",
     "company": "",
-    "avatar": "/placeholder.svg?height=100&width=100",
+    "avatar": "",
     "content":
       "A ótica Lunica é uma empresa moderna e sabe da importância do mundo digital para ser vista e encontrada, por isso, decidimos fazer o TOUR VIRTUAL e escolhemos a @agoravai360 para nos auxiliar com esse serviço, e adoramos o resultado",
     "rating": 5,
@@ -53,7 +53,7 @@
     "id": 6,
     "name": "Mafort Investimentos",
     "company": "",
-    "avatar": "/placeholder.svg?height=100&width=100",
+    "avatar": "",
     "content":
       "Gostei muito do atendimento, o Marcelo super atencioso e paciente, nos entregou um conteúdo totalmente personalizado e bem editado. Recomendo com certeza!",
     "rating": 5,

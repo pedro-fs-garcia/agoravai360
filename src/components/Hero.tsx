@@ -26,18 +26,37 @@ const FloatingOrb = ({ delay, size, color, duration }: any) => (
     />
 )
 
-const TechBadge = ({ icon: Icon, label, delay, color }: any) => (
-    <motion.div
-        className={`flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 backdrop-blur-sm border border-${color}-400/30 text-${color}-300`}
+const TechBadge = ({ icon: Icon, label, delay, color }: any) => {
+    const borderColor: any = {
+      emerald: "border-emerald-400/30 text-emerald-300",
+      blue: "border-blue-400/30 text-blue-300",
+      amber: "border-amber-400/30 text-amber-300",
+    };
+  
+    return (
+      <motion.div
+        className={
+          `flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 backdrop-blur-sm 
+          ${borderColor[color]}
+        `}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay, duration: 0.5 }}
-        whileHover={{ scale: 1.1, backgroundColor: `rgb(${color === 'emerald' ? '16 185 129' : color === 'blue' ? '59 130 246' : '245 158 11'} / 0.1)` }}
-    >
+        whileHover={{
+          scale: 1.1,
+          backgroundColor:
+            color === "emerald"
+              ? "rgba(16, 185, 129, 0.1)"
+              : color === "blue"
+              ? "rgba(59, 130, 246, 0.1)"
+              : "rgba(245, 158, 11, 0.1)",
+        }}
+      >
         <Icon className="h-4 w-4" />
         <span className="text-sm font-medium">{label}</span>
-    </motion.div>
-)
+      </motion.div>
+    );
+  };
 
 const AnimatedText = ({ children, delay = 0 }: any) => {
     const letters = Array.from(children)
@@ -155,23 +174,6 @@ export default function Hero() {
                                     Crie um Site Profissional, Moderno e Que Converte!
                                 </motion.div>
                             </motion.h1>
-
-                            {/* <motion.div
-                                className="relative"
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 1.8, duration: 0.8 }}
-                            >
-                                <h2 className="text-xl md:text-xl font-light text-slate-200 max-w-2xl">
-                                    Trazendo sua realidade para o{" "}
-                                    <motion.span
-                                        className="font-bold bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent"
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        Virtual
-                                    </motion.span>
-                                </h2>
-                            </motion.div> */}
                         </div>
 
                         {/* Description */}
@@ -203,6 +205,7 @@ export default function Hero() {
                                     className="px-8 py-4 border-2 border-slate-400/30 text-slate-300 font-semibold rounded-2xl backdrop-blur-sm hover:border-emerald-400/50 hover:text-emerald-400 transition-all duration-300"
                                     whileHover={{ scale: 1.05, backgroundColor: "rgba(16,185,129,0.1)" }}
                                     whileTap={{ scale: 0.95 }}
+                                    aria-label="Acessa Portfolio"
                                 >
                                     Ver Portfólio
                                 </motion.button>

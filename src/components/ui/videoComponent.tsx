@@ -34,7 +34,6 @@ export default function VideoComponent({ videoUrl }: Props) {
                 muted
                 loop
                 playsInline
-                poster="/placeholder.svg?height=600&width=500"
             >
                 <source src={videoUrl} type="video/mp4" />
                 <source src="/services-video.webm" type="video/webm" />

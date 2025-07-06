@@ -8,10 +8,10 @@ type FormData = {
 }
 
 export const submitWpMessage = async (e: React.FormEvent, formData:FormData) => {
-    e.preventDefault()
     try {
         // Simular envio (aqui você pode integrar com sua API)
-        await new Promise((resolve) => setTimeout(resolve, 2000))
+        await new Promise((resolve) => setTimeout(resolve, 500))
+        console.log(e)
 
         // Criar mensagem para WhatsApp
         const message = `*Nova solicitação de orçamento - Agora Vai 360*
@@ -26,7 +26,7 @@ ${formData.description}
 ---
 Enviado através do site da Agora Vai 360`
 
-        // Redirecionar para WhatsApp
+        // Abrir WhatsApp em nova aba
         const whatsappUrl = `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(message)}`
         window.open(whatsappUrl, "_blank")
     } catch (error) {
@@ -56,9 +56,9 @@ export const submitFormSpree = async (
     });
 
     if (response.ok) {
-
+      console.log("Formulário enviado com sucesso via FormSpree")
     } else {
-        
+      console.error("Erro ao enviar formulário via FormSpree")
     }
   } catch (error) {
     console.error("Erro ao enviar formulário:", error);
@@ -88,7 +88,9 @@ export const submitComFormSubmit = async (
     });
 
     if (response.ok) {
+      console.log("Formulário enviado com sucesso via FormSubmit")
     } else {
+      console.error("Erro ao enviar formulário via FormSubmit")
     }
   } catch (err) {
     console.error("Erro ao enviar:", err);

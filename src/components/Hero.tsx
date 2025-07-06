@@ -27,7 +27,7 @@ const FloatingOrb = ({ delay, size, color, duration }: any) => (
 )
 
 const TechBadge = ({ icon: Icon, label, delay, color }: any) => {
-    const borderColor: any = {
+    const borderColor: Record<string, string> = {
       emerald: "border-emerald-400/30 text-emerald-300",
       blue: "border-blue-400/30 text-blue-300",
       amber: "border-amber-400/30 text-amber-300",

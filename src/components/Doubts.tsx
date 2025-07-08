@@ -49,12 +49,20 @@ export default function Doubts() {
     try {
       // Simular envio (aqui você pode integrar com sua API)
 
+      // Abrir WhatsApp em nova aba
       submitWpMessage(e, formData)
 
+      // Enviar dados para FormSpree
       submitFormSpree(e, formData)
 
       setIsSubmitted(true)
       setFormData({ name: "", email: "", whatsapp: "", description: "" })
+
+      // Aguardar um pouco para garantir que o WhatsApp seja aberto antes do redirecionamento
+      setTimeout(() => {
+        window.location.href = "/confirmado"
+      }, 1000)
+    
     } catch (error) {
       console.error("Erro ao enviar formulário:", error)
     } finally {
